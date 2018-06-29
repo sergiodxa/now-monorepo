@@ -1,0 +1,9 @@
+{
+  "type": "monorepo",
+  "env": {
+    "NAME": "Sergio"
+  },
+  "monorepo": {
+    "apps": ["date", "hello"]
+  }
+}

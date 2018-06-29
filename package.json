@@ -1,0 +1,17 @@
+{
+  "name": "now-monorepo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/sergiodxa/now-monorepo.git",
+  "author": "Sergio Xalambrí <sergiodxa@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "pkg index.js --targets=macos --output ./example/deploy"
+  },
+  "dependencies": {
+    "now": "^11.2.4"
+  },
+  "devDependencies": {
+    "pkg": "^4.3.3"
+  }
+}
