@@ -1,5 +1,4 @@
 const { exec } = require("child_process");
-const { resolve } = require("path");
 const log = require("./log");
 
 function formatEnvs(env = {}) {
@@ -10,7 +9,7 @@ function formatEnvs(env = {}) {
     .trim();
 }
 
-function now({ config, path, token }) {
+function now({ config, path }) {
   const envs = formatEnvs(config.env);
   log.debug("Global variables found");
 
@@ -18,7 +17,7 @@ function now({ config, path, token }) {
   log.debug("Checked if it's a public deployment");
 
   return new Promise((resolve, reject) => {
-    const command = `now ./${path} ${envs} --token=${token} ${
+    const command = `now ./${path} ${envs} ${
       isPublic ? "--public" : ""
     }`;
     log.debug(`Deploy command formatted ${command}`)
